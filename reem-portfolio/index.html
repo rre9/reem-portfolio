@@ -10,9 +10,9 @@ Contact: reem.nawafa@gmail.com
         (function () {
             try {
                 var saved = localStorage.getItem('theme');
-                document.documentElement.setAttribute('data-theme', saved || 'dark');
+                document.documentElement.setAttribute('data-theme', saved || 'light');
             } catch (e) {
-                document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.setAttribute('data-theme', 'light');
             }
         })();
     </script>

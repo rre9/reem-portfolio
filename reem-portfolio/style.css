@@ -1667,16 +1667,16 @@ body.no-scroll { overflow: hidden; }
     background: var(--bg-elevated);
     border: 1px solid var(--line);
     border-radius: 14px;
-    padding: 1.5rem 1.4rem 1.65rem;
+    padding: 1.15rem 1.2rem 1.3rem;
     display: flex;
     flex-direction: column;
-    gap: 1.65rem;
+    gap: 1.25rem;
 }
 
 .skills-row {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.35rem;
+    gap: 1.05rem;
     align-items: stretch;
 }
 
@@ -1684,20 +1684,20 @@ body.no-scroll { overflow: hidden; }
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.5rem;
     height: 100%;
 }
 
 .skill-group--full {
-    padding-top: 1.15rem;
-    margin-top: 0.35rem;
+    padding-top: 0.95rem;
+    margin-top: 0.25rem;
     border-top: 1px solid var(--line);
 }
 
 .skill-group-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
+    gap: 0.35rem;
     flex: 1;
     align-content: flex-start;
 }
@@ -1705,31 +1705,31 @@ body.no-scroll { overflow: hidden; }
 .skill-group-label {
     display: flex;
     align-items: center;
-    gap: 0.45rem;
-    font-size: 0.74rem;
+    gap: 0.4rem;
+    font-size: 0.68rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     color: var(--text-soft);
     margin: 0;
-    min-height: 1.25rem;
+    min-height: 1.1rem;
     flex-shrink: 0;
 }
 
 .skill-group-label i {
     color: var(--primary);
-    font-size: 0.72rem;
+    font-size: 0.66rem;
 }
 
 .skill-chip {
-    font-size: 0.72rem;
+    font-size: 0.66rem;
     font-weight: 500;
-    padding: 0.32rem 0.62rem;
-    border-radius: 6px;
+    padding: 0.22rem 0.5rem;
+    border-radius: 5px;
     background: color-mix(in srgb, var(--bg) 50%, transparent);
     border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
     color: var(--text-soft);
-    line-height: 1.4;
+    line-height: 1.35;
     transition: color var(--ease), border-color var(--ease);
 }
 
@@ -1741,30 +1741,30 @@ body.no-scroll { overflow: hidden; }
 @media (min-width: 640px) {
     .skills-row {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.35rem 1.75rem;
+        gap: 1.1rem 1.45rem;
     }
 }
 
 @media (min-width: 900px) {
     .skills-panel {
-        padding: 1.65rem 1.75rem 1.85rem;
-        gap: 1.85rem;
+        padding: 1.3rem 1.45rem 1.45rem;
+        gap: 1.45rem;
     }
 
     .skills-row {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem 2.25rem;
+        gap: 1.2rem 1.85rem;
     }
 
     .skill-group--full {
-        padding-top: 1.35rem;
-        margin-top: 0.5rem;
+        padding-top: 1.05rem;
+        margin-top: 0.35rem;
     }
 }
 
 @media (max-width: 639px) {
     .skills-row .skill-group:not(:last-child) {
-        padding-bottom: 1.2rem;
+        padding-bottom: 1rem;
         border-bottom: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
     }
 }
@@ -2407,9 +2407,9 @@ html.js .reveal.visible {
     .exp-node { inset-inline-start: -2.25rem; }
     .exp-cert-wrap { padding-inline-start: 2.25rem; }
     .exp-bullets--grid { grid-template-columns: 1fr; }
-    .skills-panel { gap: 1.35rem; padding: 1.2rem 1.1rem 1.35rem; }
-    .skills-row { gap: 1.15rem; }
-    .skill-group--full { margin-top: 0.25rem; padding-top: 1rem; }
+    .skills-panel { gap: 1.1rem; padding: 1rem 1rem 1.15rem; }
+    .skills-row { gap: 0.95rem; }
+    .skill-group--full { margin-top: 0.2rem; padding-top: 0.85rem; }
     .projects-showcase {
         --showcase-spread: 118px;
         min-height: auto;

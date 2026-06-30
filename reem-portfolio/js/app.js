@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  let currentLang = 'en';
+  let currentLang = 'ar';
 
   const langToggle = () => document.getElementById('lang-toggle');
   const langText = () => document.getElementById('lang-text');
@@ -16,8 +16,8 @@
 
   function initializeLanguage() {
     const savedLang = localStorage.getItem('language');
-    currentLang = savedLang || 'en';
-    if (!savedLang) localStorage.setItem('language', 'en');
+    currentLang = savedLang || 'ar';
+    if (!savedLang) localStorage.setItem('language', 'ar');
     applyLanguage();
   }
 
@@ -58,9 +58,13 @@
 
   function updateThemeIcon(theme) {
     const icon = themeIcon();
+    const btn = themeToggle();
     if (!icon) return;
-    const name = theme === 'dark' ? 'fa-moon' : 'fa-sun';
+    const name = theme === 'dark' ? 'fa-sun' : 'fa-moon';
     icon.innerHTML = `<i class="fa-solid ${name}" aria-hidden="true"></i>`;
+    if (btn) {
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
   }
 
   function initializeNavigation() {
@@ -175,7 +179,68 @@
     };
   }
 
+  function closeImageLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    if (!lightbox?.classList.contains('open')) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    const img = document.getElementById('image-lightbox-img');
+    if (img) {
+      img.src = '';
+      img.alt = '';
+    }
+    const caption = document.getElementById('image-lightbox-caption');
+    if (caption) caption.textContent = '';
+  }
+
+  function openImageLightbox(src, alt, caption) {
+    const lightbox = document.getElementById('image-lightbox');
+    const img = document.getElementById('image-lightbox-img');
+    const captionEl = document.getElementById('image-lightbox-caption');
+    const closeBtn = document.getElementById('image-lightbox-close');
+    if (!lightbox || !img) return;
+
+    img.src = src;
+    img.alt = alt || '';
+    if (captionEl) {
+      captionEl.textContent = caption || '';
+      captionEl.hidden = !caption;
+    }
+
+    const tr = window.PortfolioData?.translations?.[currentLang];
+    if (closeBtn && tr?.close) closeBtn.setAttribute('aria-label', tr.close);
+
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    closeBtn?.focus();
+  }
+
+  function initializeImageLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    if (!lightbox) return;
+
+    document.addEventListener('click', (e) => {
+      const zoomBtn = e.target.closest('.modal-gallery-zoom');
+      if (zoomBtn) {
+        e.preventDefault();
+        const img = zoomBtn.querySelector('img');
+        const figcaption = zoomBtn.closest('figure')?.querySelector('figcaption');
+        openImageLightbox(
+          zoomBtn.dataset.lightboxSrc || img?.src || '',
+          img?.alt || '',
+          figcaption?.textContent?.trim() || ''
+        );
+        return;
+      }
+
+      if (e.target.closest('#image-lightbox-close') || e.target === lightbox) {
+        closeImageLightbox();
+      }
+    });
+  }
+
   function closeModal(modalId) {
+    closeImageLightbox();
     const modal = document.getElementById(modalId);
     if (!modal) return;
     modal.classList.remove('open');
@@ -191,6 +256,11 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
+        const lightbox = document.getElementById('image-lightbox');
+        if (lightbox?.classList.contains('open')) {
+          closeImageLightbox();
+          return;
+        }
         document.querySelectorAll('.modal.open').forEach((m) => closeModal(m.id));
       }
     });
@@ -220,6 +290,7 @@
     initializeNavigation();
     initializeSplash();
     initializeModals();
+    initializeImageLightbox();
     initializeLazyImages();
 
     langToggle()?.addEventListener('click', toggleLanguage);

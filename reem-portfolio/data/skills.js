@@ -5,7 +5,7 @@ window.PortfolioData.skills = [
     id: 'languages',
     icon: 'fa-code',
     title: { ar: 'لغات البرمجة', en: 'Programming Languages' },
-    items: ['C#', 'PHP', 'Python', 'JavaScript', 'SQL', 'Dart'],
+    items: ['C#', 'PHP', 'Python', 'JavaScript', 'SQL', 'Dart', 'Apex'],
   },
   {
     id: 'backend',
@@ -29,7 +29,7 @@ window.PortfolioData.skills = [
     id: 'devops',
     icon: 'fa-gears',
     title: { ar: 'DevOps & Tools', en: 'DevOps & Tools' },
-    items: ['Git', 'GitHub', 'CI/CD Pipelines', 'Azure', 'Docker Basics', 'Render', 'Netlify', 'VS Code', 'Cursor', 'Postman', 'ProjectLibre'],
+    items: ['Git', 'GitHub', 'CI/CD Pipelines', 'Azure', 'Docker Basics', 'XAMPP', 'Render', 'Netlify', 'VS Code', 'Cursor', 'Postman', 'ProjectLibre'],
   },
   {
     id: 'security',

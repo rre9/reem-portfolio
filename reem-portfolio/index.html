@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <!--
 © 2026 Reem Nawaf Aslami. All Rights Reserved.
 Unauthorized copying or redistribution without written permission is prohibited.
@@ -13,6 +13,14 @@ Contact: reem.nawafa@gmail.com
                 document.documentElement.setAttribute('data-theme', saved || 'light');
             } catch (e) {
                 document.documentElement.setAttribute('data-theme', 'light');
+            }
+            try {
+                var lang = localStorage.getItem('language') || 'ar';
+                document.documentElement.setAttribute('lang', lang);
+                document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            } catch (e) {
+                document.documentElement.setAttribute('lang', 'ar');
+                document.documentElement.setAttribute('dir', 'rtl');
             }
         })();
         document.documentElement.classList.add('js');
@@ -31,8 +39,8 @@ Contact: reem.nawafa@gmail.com
     <meta property="og:description" content="Back-End Developer and API Integration Specialist based in Riyadh, Saudi Arabia.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://reem-nawaf.com">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ar_SA">
+    <meta property="og:locale" content="ar_SA">
+    <meta property="og:locale:alternate" content="en_US">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,7 +85,7 @@ Contact: reem.nawafa@gmail.com
 
             <div class="nav-controls">
                 <button type="button" class="control-btn lang-toggle" id="lang-toggle" aria-label="Switch language">
-                    <span id="lang-text" data-translate="languageToggle">AR</span>
+                    <span id="lang-text" data-translate="languageToggle">EN</span>
                 </button>
                 <button type="button" class="control-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                     <span class="theme-icon" id="theme-icon" aria-hidden="true"></span>
@@ -241,7 +249,7 @@ Contact: reem.nawafa@gmail.com
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container footer-inner">
-            <p data-translate="footerText">© 2026 Reem Nawaf Aslami. Built with passion for clean code and scalable systems.</p>
+            <p data-translate="footerText">© 2026 ريم نواف الأسلمي · مهندسة برمجيات أبني أنظمة خلفية وتكاملات API بمعايير مؤسسية.</p>
             <button type="button" class="to-top" id="to-top" aria-label="Back to top">
                 <i class="fas fa-arrow-up" aria-hidden="true"></i>
             </button>
@@ -249,6 +257,14 @@ Contact: reem.nawafa@gmail.com
     </footer>
 
     <div id="project-modals"></div>
+
+    <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image preview">
+        <button type="button" class="image-lightbox-close" id="image-lightbox-close" aria-label="Close">&times;</button>
+        <figure class="image-lightbox-inner">
+            <img class="image-lightbox-img" id="image-lightbox-img" src="" alt="">
+            <figcaption class="image-lightbox-caption" id="image-lightbox-caption"></figcaption>
+        </figure>
+    </div>
 
     <!-- Data -->
     <script src="data/site.js"></script>

@@ -1,0 +1,3 @@
+# Netlify — الموقع الفعلي داخل مجلد reem-portfolio
+[build]
+  publish = "reem-portfolio"

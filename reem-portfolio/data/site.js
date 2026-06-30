@@ -7,8 +7,8 @@ window.PortfolioData.site = {
   owner: {
     name: { ar: 'ريم نواف الأسلمي', en: 'Reem Nawaf Aslami' },
     title: {
-      ar: 'مطورة Full-Stack متخصصة في Back-End و API Integrations',
-      en: 'Full-Stack Software Engineer specialized in Back-End and API Integrations',
+      ar: 'مطورة Full-Stack — متخصصة في Back-End وتكاملات API للأنظمة المؤسسية',
+      en: 'Full-Stack Engineer — Back-End & API Integrations for Enterprise Systems',
     },
     role: {
       ar: 'مطورة برمجيات Full-Stack',
@@ -21,8 +21,8 @@ window.PortfolioData.site = {
   },
   hero: {
     description: {
-      ar: 'أبني حلول رقمية آمنة وقابلة للتوسع من واجهات البرمجة وقواعد البيانات إلى لوحات التحكم وتكاملات الأنظمة لدي خبرة في الأنظمة المؤسسية منصات التأمين Microservices وتطوير تطبيقات الويب الحديثة',
-      en: 'I build secure, scalable, and user-focused digital solutions — from APIs and databases to dashboards, enterprise systems, and modern web applications. Experienced in microservices, insurance platforms, and external system integrations.',
+      ar: 'أُصمّم وأُبني حلولاً رقمية آمنة وقابلة للتوسع — من واجهات برمجة وقواعد بيانات عالية الأداء إلى لوحات تحكم وتكاملات أنظمة سلسة. خبرة ميدانية في المنصات المؤسسية، قطاع التأمين، معماريات Microservices، وتطبيقات ويب حديثة تُسلَّم بثقة وجودة إنتاج.',
+      en: 'I design and build secure, scalable digital solutions — from high-performance APIs and databases to smart dashboards and frictionless system integrations. Hands-on experience across enterprise platforms, insurance sector, microservices architecture, and modern web applications delivered with production-grade quality.',
     },
     stats: [
       { icon: 'fa-clock', label: { ar: '3+ سنوات خبرة', en: '3+ Years Experience' } },

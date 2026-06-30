@@ -303,7 +303,9 @@
                 const caption = img.caption ? t(img.caption, lang) : '';
                 return `
             <figure>
-              <img src="${escapeHtml(img.src)}" alt="${escapeHtml(t(p.cardTitle, lang))}" loading="lazy" width="800" height="500">
+              <button type="button" class="modal-gallery-zoom" data-lightbox-src="${escapeHtml(img.src)}" aria-label="${escapeHtml(tr.zoomImage)}">
+                <img src="${escapeHtml(img.src)}" alt="${escapeHtml(t(p.cardTitle, lang))}" loading="lazy" width="800" height="500">
+              </button>
               ${caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ''}
             </figure>`;
               })
@@ -453,8 +455,15 @@
         <div class="exp-cert-content">
           <span class="exp-cert-label">${escapeHtml(tr.freelanceBadge)}</span>
           <strong class="exp-cert-title">${escapeHtml(t(cert.title, lang))}</strong>
+          <span class="exp-cert-spec">${escapeHtml(t(cert.specialization, lang))}</span>
           <span class="exp-cert-meta">${escapeHtml(t(cert.org, lang))} · ${escapeHtml(t(cert.date, lang))}</span>
         </div>
+        ${cert.pdfPath
+          ? `<a href="${escapeHtml(cert.pdfPath)}" class="exp-cert-download" download="${escapeHtml(cert.pdfDownloadName || '')}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-file-pdf" aria-hidden="true"></i>
+              <span>${escapeHtml(tr.downloadFreelanceCert)}</span>
+            </a>`
+          : ''}
       </aside>`;
   }
 
@@ -533,7 +542,7 @@
         <div>
           <span class="edu-label">${escapeHtml(tr.educationTitle)}</span>
           <strong>${escapeHtml(t(edu.degree, lang))}</strong>
-          <span>${escapeHtml(t(edu.institution, lang))} · ${lang === 'ar' ? 'تخرج ' : ''}${escapeHtml(edu.graduated)}</span>
+          <span>${escapeHtml(t(edu.institution, lang))} · ${escapeHtml(t(edu.diplomaLevel, lang))} · ${lang === 'ar' ? 'تخرج ' : ''}${escapeHtml(edu.graduated)}</span>
         </div>
       </div>`;
   }

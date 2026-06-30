@@ -98,8 +98,12 @@ window.PortfolioData.site = {
   },
   education: {
     degree: {
-      ar: 'دبلوم متوسط في البرمجة وقواعد البيانات',
-      en: 'Intermediate Diploma in Programming and Database Systems',
+      ar: 'علوم الحاسب — برمجة وقواعد البيانات',
+      en: 'Computer Science — Programming & Database Systems',
+    },
+    diplomaLevel: {
+      ar: 'دبلوم متوسط',
+      en: 'Intermediate Diploma',
     },
     institution: { ar: 'جامعة الملك سعود', en: 'King Saud University' },
     graduated: '2025',
@@ -118,6 +122,8 @@ window.PortfolioData.site = {
       en: 'Websites Programming and Development',
     },
     date: { ar: 'مارس 2026 – مارس 2027', en: 'Mar 2026 – Mar 2027' },
+    pdfPath: 'assets/certs/Freelance-Practitioner-Certificate-Web-Development.pdf',
+    pdfDownloadName: 'Freelance-Practitioner-Certificate-Web-Development-Reem-Nawaf.pdf',
   },
   cvPath: 'Reem-Nawaf-Aslami-CV.pdf',
   cvDownloadName: 'Reem-Nawaf-Aslami-Full-Stack-Software-Engineer.pdf',
